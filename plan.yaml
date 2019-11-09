@@ -9,7 +9,7 @@ scripts:
     description: Run license check script
     actions:
       - shell: shuttle template -o boilerplate.py ./licensing/boilerplate.py
-      #- shell: shuttle template -o boilerplate.py.txt ./licensing/boilerplate.py.txt
+      - shell: shuttle template -o boilerplate.py.txt ./licensing/boilerplate.py.txt
       - shell: shuttle template -o boilerplate.proto.txt ./licensing/boilerplate.proto.txt
       - shell: shuttle template -o boilerplate.go.txt ./licensing/boilerplate.go.txt
       - shell: shuttle template -o boilerplate.generatego.txt ./licensing/boilerplate.generatego.txt
