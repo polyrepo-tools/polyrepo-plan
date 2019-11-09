@@ -2,4 +2,5 @@ scripts:
   say:
     description: Say something
     actions:
-    - shell: echo something masterly
+    - shell: shuttle template -o .golangci.yml .golangci.tmpl
+    - shell: golangci-lint run --config $tmp/.golangci.yml
