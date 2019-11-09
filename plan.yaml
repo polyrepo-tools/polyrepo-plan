@@ -1,6 +1,6 @@
 scripts: 
-  say:
-    description: Say something
+  linter:
+    description: Run linter
     actions:
     - shell: shuttle template -o .golangci.yml .golangci.tmpl
     - shell: golangci-lint run --config $tmp/.golangci.yml
