@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # Copyright 2019-present Open Networking Foundation.
 #
@@ -125,13 +125,6 @@ def file_passes(filename, refs, regexs):
             if found != 0:
                 break
 
-    if generated:
-        p = regexs["generator_name"]
-        for i, d in enumerate(data):
-            (data[i], found) = p.subn('GENERATOR', d)
-            if found != 0:
-                break
-
     # if we don't match the reference at this point, fail
     if ref != data:
         print("Header in %s does not match reference, diff:" % filename, file=verbose_out)
@@ -195,9 +188,6 @@ def get_dates():
     years = datetime.datetime.now().year
     return '(%s)' % '|'.join((str(year) for year in range(2014, years+1)))
 
-def get_generator():
-    return re.compile(r"(?<=\bby\W)\b(\w+-)*\w*")
-
 def get_regexs():
     regexs = {}
     # Search for "YEAR" which exists in the boilerplate, but shouldn't in the real thing
@@ -211,7 +201,6 @@ def get_regexs():
     regexs["shebang"] = re.compile(r"^(#!.*\n)\n*", re.MULTILINE)
     # Search for generated files
     regexs["generated"] = re.compile( 'DO NOT EDIT' )
-    regexs["generator_name"] = get_generator()
     return regexs
 
 def main():
