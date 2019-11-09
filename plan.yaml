@@ -14,5 +14,5 @@ scripts:
       - shell: shuttle template -o boilerplate.proto.txt ./licensing/boilerplate.proto.txt
       - shell: shuttle template -o boilerplate.go.txt ./licensing/boilerplate.go.txt
       - shell: shuttle template -o boilerplate.generatego.txt ./licensing/boilerplate.generatego.txt
-      - shell: chmod +x $tmp/boilerplate.py && $tmp/boilerplate.py -v
+      - shell: $tmp/boilerplate.py -v
 
