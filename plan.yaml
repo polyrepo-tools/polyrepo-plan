@@ -1,0 +1,5 @@
+scripts: 
+  say:
+    description: Say something
+    actions:
+    - shell: echo something masterly
