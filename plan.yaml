@@ -8,10 +8,11 @@ scripts:
   license_check:
     description: Run license check script
     actions:
-      - shell: shuttle template -o boilerplate.py ./licensing/boilerplate.py
-      - shell: shuttle template -o boilerplate.py.txt ./licensing/boilerplate.py.txt
-      - shell: shuttle template -o boilerplate.proto.txt ./licensing/boilerplate.proto.txt
-      - shell: shuttle template -o boilerplate.go.txt ./licensing/boilerplate.go.txt
-      - shell: shuttle template -o boilerplate.generatego.txt ./licensing/boilerplate.generatego.txt
-      - shell: chmod +x $tmp/boilerplate.py && $tmp/boilerplate.py -v
+      - shell: mkdir licensing
+      - shell: shuttle template -o ./licensing/boilerplate.py ./licensing/boilerplate.py
+      - shell: shuttle template -o ./licensing/boilerplate.py.txt ./licensing/boilerplate.py.txt
+      - shell: shuttle template -o ./licensing/boilerplate.proto.txt ./licensing/boilerplate.proto.txt
+      - shell: shuttle template -o ./licensing/boilerplate.go.txt ./licensing/boilerplate.go.txt
+      - shell: shuttle template -o ./licensing/boilerplate.generatego.txt ./licensing/boilerplate.generatego.txt
+      - shell: chmod +x $tmp/licensing/boilerplate.py && $tmp/licensing/boilerplate.py -v
 
