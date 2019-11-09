@@ -4,3 +4,9 @@ scripts:
     actions:
     - shell: shuttle template -o .golangci.yml .golangci.tmpl
     - shell: golangci-lint run --config $tmp/.golangci.yml
+
+  license_check:
+    description: Run license check script
+    actions:
+      - shell: $tmp/boilerplate.py -v
+      - shell: shuttle template -o licensing/boilerplate.tmpl boilerplate.py
