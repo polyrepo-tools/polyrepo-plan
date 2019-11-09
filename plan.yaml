@@ -8,7 +8,6 @@ scripts:
   license_check:
     description: Run license check script
     actions:
-      - shell: shuttle template -o licensing/boilerplate.tmpl boilerplate.py
-      - shell: shuttle template -o licensing licensing
+      - shell: shuttle template -o boilerplate.tmpl boilerplate.py
       - shell: $tmp/boilerplate.py -v
 
